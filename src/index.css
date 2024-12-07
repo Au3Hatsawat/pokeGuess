@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    /* .outline_logo{
+      -webkit-text-stroke: 0.2rem #2a75bb;
+    } */
+  }
+
+@font-face {
+  font-family: "Pokemon-Solid";
+  src: local("Pokemon Solid"),
+  url('./assets/fonts/Pokemon Solid.ttf');
+}
