@@ -39,7 +39,7 @@ function App() {
         return "red-300";
         break;
       case "fire" :
-        return "orange-300";
+        return "orange"+"-"+"300";
         break;
       case "flying" :
         return "blue-100";
@@ -78,7 +78,7 @@ function App() {
         return "gray-400"
         break;
       }
-};
+  };
 
 
   useEffect(() => {
@@ -88,7 +88,7 @@ function App() {
     const loadPoke = async () => {
       try {
         setLoading(true);
-        let response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`, {
+        let response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`, {
           signal: abortController.signal
         });
 
@@ -118,7 +118,6 @@ function App() {
 
   useEffect(()=>{
     const interval = setInterval(() => setId(Math.floor(Math.random() * 1025 + 1)),60000);
-
     return () => {
       clearInterval(interval);
     };
@@ -126,7 +125,6 @@ function App() {
 
 
   console.log(poke);
-  console.log(id);
 
 
   return (
