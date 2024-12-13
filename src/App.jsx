@@ -41,9 +41,6 @@ function App() {
 
   }, []);
 
-  // const initPokeList = () => {
-
-  // }
 
   console.log(pokeList);
 
