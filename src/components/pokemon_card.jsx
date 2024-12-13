@@ -30,7 +30,6 @@ const PokeCard = (prop) => {
         };
         settype(response.data?.types?.map((obj) => obj.type.name));
         setTotal(getTotal());
-
       } catch (e) {
         setError(e);
       } finally {

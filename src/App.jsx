@@ -10,10 +10,15 @@ import Contact from './sections/contact';
 function App() {
 
   const [pokeList, setPokeList] = useState("");
-  const [pokeAmoung, setPokeAmoung] = useState(8);
+  const [pokeFilter, setPokeFilter] = useState([]);
+  const [pokeAmong, setpokeAmong] = useState(6);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const url = "pokemon?limit=100000&offset=0";
+
+  const getpokeAmong = () => {
+    setpokeAmong(pokeAmong+6);
+  };
 
   useEffect(() => {
 
@@ -27,8 +32,8 @@ function App() {
         });
 
         setPokeList(response.data);
+        setPokeFilter(response.data.results.filter((obj,idx)=>(idx < pokeAmong)));
         setError("");
-
       } catch (e) {
         setError(e);
       } finally {
@@ -40,9 +45,13 @@ function App() {
     return () => abortController.abort();
 
   }, []);
-
+  
+  useEffect(()=>{
+    setPokeFilter(pokeList?.results?.filter((obj,idx)=>(idx < pokeAmong)));
+  },[pokeAmong])
 
   console.log(pokeList);
+  console.log(pokeFilter);
 
 
   return (
@@ -51,7 +60,7 @@ function App() {
       <Logo />
 
       {/* middle */}
-      <Middle poke={pokeList}/>
+      <Middle poke={pokeFilter} load={getpokeAmong}/>
 
       {/* contact */}
       <Contact />
