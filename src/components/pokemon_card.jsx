@@ -167,7 +167,7 @@ const PokeCard = (prop) => {
         }
     };
 
-    console.log(poke);
+    // console.log(poke);
 
     return (
         <div className={`grid lg:grid-cols-[40%_60%] rounded-3xl shadow-lg ${getShadow()}`}>

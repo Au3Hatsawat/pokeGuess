@@ -40,7 +40,6 @@ function App() {
 
   }, []);
 
-
   console.log(pokeList);
 
 
