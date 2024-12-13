@@ -10,6 +10,7 @@ import Contact from './sections/contact';
 function App() {
 
   const [pokeList, setPokeList] = useState("");
+  const [pokeAmoung, setPokeAmoung] = useState(8);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const url = "pokemon?limit=100000&offset=0";
@@ -40,6 +41,9 @@ function App() {
 
   }, []);
 
+  // const initPokeList = () => {
+
+  // }
 
   console.log(pokeList);
 

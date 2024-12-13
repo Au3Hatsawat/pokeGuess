@@ -175,7 +175,7 @@ const PokeCard = (prop) => {
           {/* left */}
           <div className={`grid rounded-b-[6rem] rounded-t-3xl lg:rounded-r-[6rem] lg:rounded-l-3xl ${typeColor()}`}>
             <div className='mx-5 my-3 p-0 font-extrabold text-3xl text-slate-50'>{poke?.id}</div>
-            <div>
+            <div className="flex justify-center lg:block">
               <img className='scale-110 hover:scale-125 lg:scale-150 transition-all lg:hover:scale-[170%]' src={poke?.sprites?.other.home.front_default} alt={poke?.name} />
             </div>
           </div>
