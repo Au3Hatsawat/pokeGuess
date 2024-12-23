@@ -10,7 +10,7 @@ const Middle = (prop) => {
             <PokeCard key={index} url = {object.url}  />
           ))
         }
-        <div className="flex justify-center lg:col-span-3"><button onClick={prop.load} className="text-[#fff] bg-black rounded-md">Load more Pokémon</button></div>
+        <div className="flex justify-center lg:col-span-3"><button onClick={prop.load} className="text-[#fff] bg-black rounded-md px-2">Load more Pokémon</button></div>
       </div>
     )
 }

@@ -14,7 +14,7 @@ function App() {
   const [pokeAmong, setpokeAmong] = useState(6);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const url = "pokemon?limit=100000&offset=0";
+  const path = "pokemon?limit=100000&offset=0";
 
   const getpokeAmong = () => {
     setpokeAmong(pokeAmong+6);
@@ -27,7 +27,7 @@ function App() {
     const loadPoke = async () => {
       try {
         setLoading(true);
-        let response = await axios.get(`https://pokeapi.co/api/v2/${url}`, {
+        let response = await axios.get(`https://pokeapi.co/api/v2/${path}`, {
           signal: abortController.signal
         });
 
@@ -57,7 +57,7 @@ function App() {
   return (
     <div className='grid grid-rows-[10%_85%_5%] h-screen mx-5'>
       {/* logo */}
-      <Logo />
+      <Logo poke={pokeList}/>
 
       {/* middle */}
       <Middle poke={pokeFilter} load={getpokeAmong}/>
